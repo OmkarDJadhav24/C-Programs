@@ -1,31 +1,35 @@
 #include<stdio.h>
 
-int Check(int No)
+int SumNonFact(int iNo)
 {
-	int i=0;
-	int N=0;
-	int icnt=0;
-	while(No>0)
-	{
-		N=No%10;
-		if(N==4)
-		{
-			icnt=icnt+1;
-		}
-		No=No/10;
-	}
-	return icnt;
+   int iCnt = 0;
+   int iSum = 0;
+   
+   if(iNo<0)
+   {
+      iNo = -iNo;
+   }
+   
+   for(iCnt=1;iCnt<iNo;iCnt++)
+   {
+      if((iNo%iCnt) != 0)
+      {
+          iSum = iSum + iCnt;
+      }
+   }
+   
+   return iSum;
 }
-
 int main()
 {
-	int No=0;
-	int Result=0;
-	printf("\nEnter the number:");
-	scanf("%d",&No);
-	
-	Result=Check(No);
-	printf("Frequency of number: %d",Result);
-	
-	return 0;
+   int iValue = 0;
+   int iRet = 0;
+   
+   printf("Enter the number:\n");
+   scanf("%d",&iValue);
+   
+   iRet=SumNonFact(iValue);
+   printf("Summation of non factors is:%dn",iRet);
+   
+   return 0;
 }

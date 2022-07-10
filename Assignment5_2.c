@@ -1,37 +1,30 @@
 #include<stdio.h>
-#define true 1
-#define false 0
 
-int Check(int N)
+void FactRev(int iNo)
 {
-	if((N%10)==0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+   int iCnt = 0;
+   
+   if(iNo<0)
+   {
+      iNo = -iNo;
+   }
+   
+   for(iCnt=(iNo/2);iCnt>=1;iCnt--)
+   {
+      if((iNo%iCnt)==0)
+      {
+         printf("%d\n",iCnt);
+      }
+   }
 }
-
 int main()
 {
-	int No=0;
-	int Result=0;
-	
-	printf("Enter the number:");
-	scanf("%d",&No);
-	
-	Result=Check(No);
-	
-	if((Result)==true)
-	{
-		printf("It contains Zero");
-	}
-	else
-	{
-		printf("There is no Zero");
-	}
-	
-	return 0;
+   int iValue = 0;
+   
+   printf("Enter number:\n");
+   scanf("%d",&iValue);
+   
+   FactRev(iValue);
+   
+   return 0;
 }

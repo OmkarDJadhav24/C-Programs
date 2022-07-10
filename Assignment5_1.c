@@ -1,35 +1,33 @@
 #include<stdio.h>
 
-int Check(int No)
+int MultFact(int iNo)
 {
-	int Arr[3];
-	int N=0;
-	int i=0;
-	
-	
-	
-	
-	while(No>0)
-	{
-		N=No%10;
-		Arr[i]=N;
-		i=i+1;
-		printf("\n%d",N);
-		No=No/10;	
-	}
-	for(i=3;i>=0;i--)
-	{
-		printf("\n%d",Arr[i]);
-	}
-}
+   int iCnt = 0;
+   int iMult = 1;
+   
+   if(iNo<0)
+   {
+      iNo = -iNo;
+   }
 
+   for(iCnt=1;iCnt<=(iNo/2);iCnt++)
+   {
+       if((iNo%iCnt)==0)
+       {
+          iMult = iMult * iCnt;
+       }
+   }
+   return iMult;
+}
 int main()
 {
-	int No=0;
-	printf("\nEnter the number:");
-	scanf("%d",&No);
-	
-	Check(No);
-	
-	return 0;
+   int iValue = 0;
+   int iRet = 0;
+   
+   printf("Enter the number:\n");
+   scanf("%d",&iValue);
+   
+   iRet=MultFact(iValue);
+   printf("%d",iRet);
+   return 0;
 }

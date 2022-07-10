@@ -1,29 +1,34 @@
+//write a program which accept number from user and return summation of all its non factors.
+
 #include<stdio.h>
 
-int Check(int N1)
+int SumNonFact(int iNo)
 {
-	int icnt=0;
-	int i=0;
-	for(i=1;i<N1;i++)
-	{
-		if((N1%i)!=0)
-		{
-			icnt=icnt+i;
-		}
-	}
-	return icnt;
+   int iCnt=0;
+   int iAns=0;
+   if(iNo<0)
+   {
+      iNo = -iNo;
+   }
+   for(iCnt=1;iCnt<=iNo;iCnt++)
+   {
+      if((iNo%iCnt) != 0)
+      {
+          iAns=iAns+iCnt;
+      }
+   }
+   return iAns;
 }
-
 int main()
 {
-	int No=0;
-	int Result=0;
-	
-	printf("\nEnter the number:");
-	scanf("%d",&No);
-	
-	Result=Check(No);
-	printf("%d",Result);
-	
-	return 0;
+   int iValue=0;
+   int iRet=0;
+   
+   printf("Enter number:\n");
+   scanf("%d",&iValue);
+   
+   iRet=SumNonFact(iValue);
+   printf("%d\n",iRet);
+   
+   return 0;
 }

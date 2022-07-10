@@ -1,28 +1,35 @@
+//write a program which accept number from user and display its multiplication of factor
+
+
 #include<stdio.h>
 
-int Check(int N1)
+int MultFact(int iNo)
 {
-	int icnt=1;
-	for(int i=1;i<N1;i++)
-	{
-		if((N1%i)==0)
-		{
-			icnt=icnt*i;
-		}
-	}
-	return icnt;
+   int iCnt=0;
+   int iAns=1;
+   if(iNo<0)
+   {
+      iNo = -iNo;
+   }
+   for(iCnt=1;iCnt<=iNo/2;iCnt++)
+   {
+      if((iNo%iCnt)==0)
+      {
+          iAns=iAns*iCnt;
+      }
+   }
+   return iAns;
 }
-
 int main()
 {
-	int Result=0;
-	int No1=0;
-	
-	printf("\nEnter the Number:");
-	scanf("%d",&No1);
-	
-	Result=Check(No1);
-	printf("\nMultiplication of factors is:%d",Result);
-	
-	return 0;
+   int iValue=0;
+   int iRet=0;
+   
+   printf("Enter number:\n");
+   scanf("%d",&iValue);
+   
+   iRet=MultFact(iValue);
+   printf("%d\n",iRet);
+   
+   return 0;
 }

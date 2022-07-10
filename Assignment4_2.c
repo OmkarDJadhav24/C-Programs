@@ -1,26 +1,31 @@
+//write a program which accept number from user and display its factors in reverse order
+
 #include<stdio.h>
 
-int Check(int N1)
+void FactRev(int iNo)
 {
-	int i=0;
-	for(i=N1-1;i>0;i--)
-	{
-		if((N1%i)==0)
-		{
-			printf("%d\n",i);
-		}
-	}
-}
+   int iCnt=0;
+   if(iNo<0)
+   {
+      iNo = -iNo;
+   }
+   for(iCnt=iNo/2;iCnt>=1;iCnt--)
+   {
+      if((iNo%iCnt)==0)
+      {
+          printf("%d\n",iCnt);
+      }
+   }
 
+}
 int main()
 {
-	int No1=0;
-	int Result[10];
-	
-	printf("\nEnter the number:");
-	scanf("%d",&No1);
-	
-	Check(No1);
-	
-	return 0;
+   int iValue=0;
+   
+   printf("Enter number:\n");
+   scanf("%d",&iValue);
+   
+   FactRev(iValue);
+   
+   return 0;
 }

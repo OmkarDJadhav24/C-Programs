@@ -1,25 +1,30 @@
+//write a program which accept number from user and display all its non factors
+
 #include<stdio.h>
 
-int Check(int N1)
+void NonFact(int iNo)
 {
-	int i=0;
-	for(i=1;i<N1;i++)
-	{
-		if((N1%i)!=0)
-		{
-			printf("\n%d",i);
-		}
-	}
+   int iCnt=0;
+   if(iNo<0)
+   {
+      iNo = -iNo;
+   }
+   for(iCnt=1;iCnt<=iNo;iCnt++)
+   {
+      if((iNo%iCnt) != 0)
+      {
+          printf("%d\n",iCnt);
+      }
+   }
 }
-
 int main()
 {
-	int No=0;
-	
-	printf("\nEnter the number:");
-	scanf("%d",&No);
-	
-	Check(No);
-	
-	return 0;
+   int iValue=0;
+   
+   printf("Enter number:\n");
+   scanf("%d",&iValue);
+   
+   NonFact(iValue);
+   
+   return 0;
 }

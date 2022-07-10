@@ -1,30 +1,28 @@
+//Accept one parameter from user and convert case of that character
+
 #include<stdio.h>
-#include<ctype.h>
 
-int Check(char s)
+void DisplayConvert(char cValue)
 {
-	if(s>='a' && s<='z')
-	{
-		s=toupper(s);
-		return s;
-	}
-	else if(s>='A' && s<='Z')
-	{
-		s=tolower(s);
-		return s;
-	}
+   if((cValue>='A') && (cValue<='Z'))
+   {
+        cValue = tolower(cValue);
+        printf("%c\n",cValue);     
+   }
+   else if((cValue>='a') && (cValue<='z'))
+   {
+        cValue = toupper(cValue);
+        printf("%c\n",cValue);
+   }
 }
-
 int main()
-{
-	char ch='\0';
-	char result='\0';
-	printf("\nEnter the character:");
-	scanf("%c",&ch);
-	
-	result=Check(ch);
-	printf("%c",result);
-	
-	
-	return 0;
+{ 
+   char cValue='\0';
+   
+   printf("Enter character:\n");
+   scanf("%c",&cValue);
+   
+   DisplayConvert(cValue);
+   
+   return 0;
 }

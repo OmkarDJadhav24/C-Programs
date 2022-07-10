@@ -1,31 +1,31 @@
+//Accept number from user and print even factors of that number 
+
 #include<stdio.h>
 
-void Check(int value)
+void DisplayEvenFactor(int iNo)
 {
-	
-	int j=0;
-	int i=0;
-	for(i=1;i<value;i++)
-	{
-		if(value%i==0)
-		{
-			Arr[j]=i;
-			j++;
-		}
-	}
-	
-	for(j=0;j<10;j++)
-	{
-		printf("\n%d",Arr[j]);
-	}
+   int i=0;
+   if(iNo<=0)
+   {
+      iNo = -iNo;
+   }
+   
+   for(i=1;i<=iNo/2;i++)
+   {
+      if((iNo%i==0) && (i%2==0))
+      {
+         printf("%d\n",i);
+      }
+   }
 }
 int main()
 {
-	int iNo=0;
-	
-	printf("\nEnter the number:");
-	scanf("%d",&iNo);
-
-	Check(iNo);
-	return 0;
+   int iValue=0;
+   
+   printf("Enter number:\n");
+   scanf("%d",&iValue);
+   
+   DisplayEvenFactor(iValue);
+   
+   return 0;
 }

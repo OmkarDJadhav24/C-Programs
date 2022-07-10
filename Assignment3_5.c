@@ -1,29 +1,40 @@
+//Accept one parameter from user and check whether that character is vowel(a,e,i,o,u) or not.
+
 #include<stdio.h>
-#include<stdbool.h>
 #define true 1
 #define false 0
+typedef int BOOL;
 
-
-int Check(char ch)
+int ChkVowel(char cValue)
 {
-	if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+   if(cValue=='a' || cValue=='e' || cValue=='i' || cValue=='o' || cValue=='u')
+   {
+       return true;
+   }
+   else
+   {
+       return false;
+   }
+
 }
 int main()
-{
-	char ch='\0';
-	int Result=0;
-	printf("\nEnter the character:");
-	scanf("%c",&ch);
-	
-	Result=Check(ch);
-	printf("%d",Result);
-	
-	return 0;
-}
+{  
+   char cValue = '\0';
+   BOOL iRet=false;
+   
+   printf("Enter character:\n");
+   scanf("%c",&cValue);
+   
+   iRet=ChkVowel(cValue);
+   
+   if(iRet==true)
+   {
+      printf("It is vowel\n");
+   }
+   else
+   {
+      printf("It is not vowel\n");
+   }
+
+   return 0;
+} 

@@ -2,20 +2,20 @@
 
 void Display(int iNo)
 {
-   while(iNo>0)
+   int iCnt=0;
+   for(iCnt=1;iCnt<=iNo;iCnt++)
    {
       printf("* ");
-      iNo--;
    }
-
 }
 int main()
-{
+{ 
    int iValue=0;
-   
-   printf("Enter number:\n");
+ 
+   printf("Enter the Number:\n");
    scanf("%d",&iValue);
    
    Display(iValue);
+   
    return 0;
 }

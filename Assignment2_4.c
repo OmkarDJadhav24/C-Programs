@@ -1,26 +1,26 @@
 #include<stdio.h>
 
-void Display(int value1,int value2)
+void Display(int iNo,int iFreq)
 {
-	int i=0;
-	for(i=0;i<value2;i++)
-	{
-		printf("\n%d",value1);
-	}
+   int iCnt = 0;
+   for(iCnt=1;iCnt<=iFreq;iCnt++)
+   {
+       printf("%d\n",iNo);
+   }
 }
 
 int main()
 {
-	int iNo1=0;
-	int iNo2=0;
-	
-	printf("\nEnter the first number:");
-	scanf("%d",&iNo1);
-	
-	printf("\nEnter the second number:");
-	scanf("%d",&iNo2);
-	
-	Display(iNo1,iNo2);
-	
-	return 0;
+   int iValue = 0;
+   int iCount = 0;
+   
+   printf("Enter number:\n");
+   scanf("%d",&iValue);
+   
+   printf("Enter frequency:\n");
+   scanf("%d",&iCount);
+   
+   Display(iValue,iCount);
+   
+   return 0;
 }

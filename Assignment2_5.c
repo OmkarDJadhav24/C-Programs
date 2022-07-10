@@ -1,29 +1,41 @@
 #include<stdio.h>
-#include<stdbool.h>
 #define true 1
 #define false 0
 
-bool check(int value)
+typedef int BOOL;
+
+BOOL ChkEven(int iNo)
 {
-	if(value%2==0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+   if((iNo%2)==0)
+   {
+      return true;
+   }
+   
+   else
+   {
+      return false;
+   }
 }
 
 int main()
 {
-	int No=0;
-	bool Result=false;
-	printf("\nEnter the number:");
-	scanf("%d",&No);
-	
-	Result=check(No);
-	printf("%d",Result);
-	
-	return 0;
+   int iValue = 0;
+   BOOL iRet=false;
+   
+   printf("Enter number:\n");
+   scanf("%d",&iValue);
+   
+   iRet=ChkEven(iValue);
+   
+   if(iRet==true)
+   {
+      printf("%d is even number\n",iValue);
+   }
+   
+   else
+   {
+      printf("%d is odd number\n",iValue);
+   }
+   
+   return 0;
 }

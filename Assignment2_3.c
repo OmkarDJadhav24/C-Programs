@@ -1,25 +1,24 @@
 #include<stdio.h>
-#include<string.h>
 
-void Check(int value)
+void Display(int iNo)
 {
-	if(value>10)
-	{
-		printf("Hello");
-	}
-	else
-	{
-		printf("Demo");
-	}
-} 
+   if(iNo<10)
+   {
+      printf("Hello\n");
+   }
+   
+   else
+   {
+      printf("Demo\n");
+   }
+}
 int main()
 {
-	int iNo=0;
-	
-	printf("Enter the number:");
-	scanf("%d",&iNo);
-	
-	Check(iNo);
-	
-	return 0;
+    int iValue = 0;
+    
+    printf("Enter number:\n");
+    scanf("%d",&iValue);
+    
+    Display(iValue);
+    return 0;
 }
